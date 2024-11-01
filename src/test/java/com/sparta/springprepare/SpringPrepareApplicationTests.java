@@ -1,4 +1,4 @@
-package com.sparta.spring_prepare;
+package com.sparta.springprepare;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
