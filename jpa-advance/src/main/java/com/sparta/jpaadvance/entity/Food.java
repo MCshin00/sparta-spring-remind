@@ -1,6 +1,14 @@
 package com.sparta.jpaadvance.entity;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
+import java.util.ArrayList;
+import java.util.List;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -15,7 +23,7 @@ public class Food {
     private String name;
     private double price;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User user;
+    @OneToMany
+    @JoinColumn(name = "food_id") // users 테이블에 food_id 컬럼
+    private List<User> userList = new ArrayList<>();
 }
