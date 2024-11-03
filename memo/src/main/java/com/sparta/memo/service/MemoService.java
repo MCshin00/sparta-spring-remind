@@ -32,7 +32,7 @@ public class MemoService {
 
     public List<MemoResponseDto> getMemos() {
         // DB 조회
-        return memoRepository.findAll()
+        return memoRepository.findAllByOrderByModifiedAtDesc()
                 .stream()
                 .map(MemoResponseDto::new)
                 .toList();
